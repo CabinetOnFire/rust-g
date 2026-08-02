@@ -12,8 +12,12 @@ jobs:
     env:
       BYOND_MAJOR: 516
       BYOND_MINOR: 1667
+      LIBCLANG_PATH: C:\Program Files\LLVM\bin
     steps:
       - uses: actions/checkout@v6
+
+      - name: Install LLVM
+        run: winget install --exact --id LLVM.LLVM --silent --accept-package-agreements --accept-source-agreements
 
       - name: Install BYOND
         run: |
@@ -52,8 +56,13 @@ jobs:
 
   build-windows-x64:
     runs-on: windows-latest
+    env:
+      LIBCLANG_PATH: C:\Program Files\LLVM\bin
     steps:
       - uses: actions/checkout@v6
+
+      - name: Install LLVM
+        run: winget install --exact --id LLVM.LLVM --silent --accept-package-agreements --accept-source-agreements
 
       - uses: dtolnay/rust-toolchain@1.89
         with:

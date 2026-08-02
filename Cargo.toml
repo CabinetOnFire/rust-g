@@ -85,6 +85,7 @@ indexmap = { version = "2.14", optional = true, features = [
 ordered-float = { version = "5.3", optional = true, features = ["serde"] }
 qrcode = { version = "0.14.1", optional = true, features = ["image", "svg"]}
 zeroize = { version = "1.8", optional = true }
+byondapi = { version = "0.5", optional = true }
 
 [features]
 default = [
@@ -107,6 +108,7 @@ default = [
     "sql",
     "time",
     "toml",
+    "turf_pathfinder",
     "url",
     "uuid"
 ]
@@ -138,10 +140,12 @@ all = [
     "poissonnoise",
     "redis_pubsub",
     "redis_reliablequeue",
+    "turf_pathfinder",
     "unzip",
     "worleynoise",
 ]
 
+# `turf_pathfinder` uses byondapi (BYOND 515+ ABI) and requires a 32-bit x86 target.
 # default features
 acreplace = ["aho-corasick"]
 batchnoise = ["dbpnoise"]
@@ -188,6 +192,7 @@ sound_len = ["symphonia"]
 sql = ["mysql", "serde", "serde_json", "once_cell", "dashmap", "jobs"]
 time = ["chrono"]
 toml = ["serde", "serde_json", "toml-dep"]
+turf_pathfinder = ["byondapi", "pathfinding"]
 url = ["url-dep", "percent-encoding"]
 uuid = ["dep:uuid", "cuid2"]
 

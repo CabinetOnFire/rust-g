@@ -38,6 +38,8 @@ pub mod iconforge;
 pub mod json;
 #[cfg(feature = "log")]
 pub mod log;
+#[cfg(feature = "turf_pathfinder")]
+pub mod navmap_pathfinder;
 #[cfg(feature = "noise")]
 pub mod noise;
 #[cfg(feature = "pathfinder")]
