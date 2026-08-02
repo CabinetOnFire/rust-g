@@ -98,6 +98,7 @@ default = [
     "iconforge",
     "json",
     "log",
+    "navmap_pathfinder",
     "noise",
     "pathfinder",
     "rustls_tls",
@@ -106,7 +107,6 @@ default = [
     "sql",
     "time",
     "toml",
-    "navmap_pathfinder",
     "url",
     "uuid"
 ]
@@ -126,6 +126,7 @@ all = [
     "iconforge",
     "json",
     "log",
+    "navmap_pathfinder",
     "noise",
     "rustls_tls",
     "sanitize",
@@ -139,7 +140,6 @@ all = [
     "poissonnoise",
     "redis_pubsub",
     "redis_reliablequeue",
-    "navmap_pathfinder",
     "unzip",
     "worleynoise",
 ]
@@ -171,12 +171,12 @@ http = ["ureq", "serde", "serde_json", "once_cell", "jobs"]
 iconforge = ["dep:iconforge"]
 json = ["serde", "serde_json"]
 log = ["chrono"]
+navmap_pathfinder = ["byondapi", "pathfinding"]
 sanitize = ["ammonia", "serde_json"]
 sound_len = ["symphonia"]
 sql = ["mysql", "serde", "serde_json", "once_cell", "dashmap", "jobs"]
 time = ["chrono"]
 toml = ["serde", "serde_json", "toml-dep"]
-navmap_pathfinder = ["byondapi", "pathfinding"]
 url = ["url-dep", "percent-encoding"]
 uuid = ["dep:uuid", "cuid2"]
 

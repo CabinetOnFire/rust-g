@@ -123,6 +123,7 @@ The default features are:
 * iconforge: A much faster replacement for various bulk DM /icon operations such as [/tg/station]'s asset subsystem spritesheet generation and GAGS bundle generation.
 * json: Function to check JSON validity.
 * log: Faster log output.
+* navmap_pathfinder: A* pathfinding over a /tg/station type navmap. (Baked/cached navigational data)
 * noise: 2d Perlin noise.
 * pathfinder: An a* pathfinder used for finding the shortest path in a static node map. Not to be used for a non-static map.
 * sound_len: A mostly codec-agnostic library for reading the duration of an audio file.
@@ -130,7 +131,6 @@ The default features are:
   * There are also two sub-features: `native_tls` and `rustls_tls`. `rustls_tls` is a default feature, while the former is not.
 * time: High-accuracy time measuring.
 * toml: TOML parser.
-* navmap_pathfinder: A* pathfinding over a /tg/station type navmap. (Baked/cached navigational data)
 * url: Faster replacements for `url_encode` and `url_decode`.
 
 Additional features are:
