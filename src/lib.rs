@@ -60,6 +60,8 @@ pub mod sql;
 pub mod time;
 #[cfg(feature = "toml")]
 pub mod toml;
+#[cfg(feature = "turf_pathfinder")]
+pub mod navmap_pathfinder;
 #[cfg(feature = "unzip")]
 pub mod unzip;
 #[cfg(feature = "url")]

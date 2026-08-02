@@ -44,6 +44,15 @@ The [Rust] compiler:
     rustup target add i686-pc-windows-msvc
     ```
 
+1. On Windows, install [LLVM] `byondapi` uses `bindgen`, which needs `libclang.dll`:
+P
+    ```powershell
+    winget install --exact --id LLVM.LLVM
+    $Env:LIBCLANG_PATH = "$Env:ProgramFiles\LLVM\bin"
+    ```
+
+   Set `LIBCLANG_PATH` to the directory containing `libclang.dll` if LLVM is installed elsewhere.
+
 System libraries:
 
 * Ubuntu and Debian users run:
@@ -199,6 +208,7 @@ If you're still having problems, ask in the [Coderbus Discord]'s
 [Cargo]: https://doc.rust-lang.org/cargo/
 [rustup]: https://rustup.rs/
 [msvc]: https://visualstudio.microsoft.com/visual-cpp-build-tools/
+[LLVM]: https://llvm.org/
 [Coderbus Discord]: https://discord.gg/Vh8TJp9
 
 ## License
