@@ -684,7 +684,7 @@ fn new_search_job(
     )))
 }
 
-/// Blocking compatibility wrapper. Prefer the cooperative start/resume API for
+/// Blocking version of pathfinder wrapper. Prefer the async start/resume API for
 /// movement loops; this intentionally does not return to DM between slices.
 #[byondapi::bind]
 fn rustg_navmap_pathfinder(
