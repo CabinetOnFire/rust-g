@@ -44,14 +44,26 @@ The [Rust] compiler:
     rustup target add i686-pc-windows-msvc
     ```
 
-1. On Windows, install [LLVM]. `byondapi` uses `bindgen`, which needs `libclang.dll`:
+1. Builds with the `turf_pathfinder` feature require LLVM's `libclang` library. `byondapi`
+   uses it through `bindgen` to generate bindings for the installed BYOND headers.
+
+   Windows:
 
     ```powershell
     winget install --exact --id LLVM.LLVM
     $Env:LIBCLANG_PATH = "$Env:ProgramFiles\LLVM\bin"
     ```
 
-   Set `LIBCLANG_PATH` to the directory containing `libclang.dll` if LLVM is installed elsewhere.
+   Linux (Ubuntu or Debian):
+
+    ```sh
+    sudo apt-get install libclang-dev
+    ```
+
+   On other Linux distributions, install the distribution's `libclang` development package.
+   `LIBCLANG_PATH` is only needed when `libclang` is installed outside the system library
+   search path; set it to the directory containing `libclang.dll` on Windows or
+   `libclang.so` on Linux.
 
 System libraries:
 
