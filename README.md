@@ -44,7 +44,7 @@ The [Rust] compiler:
     rustup target add i686-pc-windows-msvc
     ```
 
-1. Builds with the `turf_pathfinder` feature require LLVM's `libclang` library. `byondapi`
+1. Builds with the `navmap_pathfinder` feature require LLVM's `libclang` library. `byondapi`
    uses it through `bindgen` to generate bindings for the installed BYOND headers.
 
    Windows:
@@ -130,7 +130,7 @@ The default features are:
   * There are also two sub-features: `native_tls` and `rustls_tls`. `rustls_tls` is a default feature, while the former is not.
 * time: High-accuracy time measuring.
 * toml: TOML parser.
-* turf_pathfinder: A* pathfinding over /tg/station's live turf navmesh.
+* navmap_pathfinder: A* pathfinding over a /tg/station type navmap. (Baked/cached navigational data)
 * url: Faster replacements for `url_encode` and `url_decode`.
 
 Additional features are:

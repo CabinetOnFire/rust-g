@@ -14,6 +14,8 @@ mod jobs;
 
 #[cfg(feature = "acreplace")]
 pub mod acreplace;
+#[cfg(feature = "cave_system_generator")]
+pub mod cave_system_generator;
 #[cfg(feature = "cellularnoise")]
 pub mod cellularnoise;
 #[cfg(feature = "dbpnoise")]
@@ -38,7 +40,7 @@ pub mod iconforge;
 pub mod json;
 #[cfg(feature = "log")]
 pub mod log;
-#[cfg(feature = "turf_pathfinder")]
+#[cfg(feature = "navmap_pathfinder")]
 pub mod navmap_pathfinder;
 #[cfg(feature = "noise")]
 pub mod noise;

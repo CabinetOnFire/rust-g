@@ -1,15 +1,12 @@
 /**
- * Cooperative navmap A*. Each start/resume call works for about 5ms, then returns a list with
+ *  Navmap A*. Each start/resume call works for about 5ms, then returns a list with
  * `status` (`in_progress`, `complete`, `no_path`, or `error`), an optional `job_id`, and a final
  * `path` for complete/no_path results. Cancel abandoned or superseded jobs.
  *
- * nav_pass bit 13 is the simulated-turf flag and must be set whenever cached turf data is sent to
- * Rust. This keeps `simulated_only` entirely Rust-side for baked turfs.
  */
 
 /**
- * Blocking compatibility wrapper. Returns the final turf list directly; use only for callers that
- * require synchronous behavior. AI movement should use the cooperative start/resume API below.
+ * Synchronous call to the pathfinder, Use this sparingly if you REALLY need immediate results. If you run this on long distances it could take too long.
  */
 #define rustg_navmap_pathfinder(start, end, pass_info, is_flying, max_range, min_target_distance, simulated_only, avoid_turf, diagonal_handling, skip_first) \
 	RUSTG_CALL(RUST_G, "byond:rustg_navmap_pathfinder_ffi")(start, end, pass_info, is_flying, max_range, min_target_distance, simulated_only, avoid_turf, diagonal_handling, skip_first)
